@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- Ceci est la manière de mettre un commetaire,
+     avec !-- et -- à la fin entre guillemets -->
+<!-- La balise !DOCTYPE est l'élément toujours au début de la page, 
+déclaration au browser de quel type de html est utilisé (HTML5 ici). -->
+
+<!-- La structure du document est toujours structuré de la manière suivante :
+
+    Les balises html, pour délimiter le code et montrer qu'on code en html
+
+    Les balises head, pour tout les détails de la page comme le titre, les documents
+    externes etc
+
+    Les balises body, pour tous les éléments physiques de la page web -->
+
+<!-- HTML est un langage qui fonctionne avec des balises,le nom des balises pour
+indiquer le type de balise, et les attributs ainsi que leurs valeurs
+à la suite du nom pour plus de détails.
+
+La forme suivante: <tagname attributename="attributevalue">content</tagname>
+Exemple: <h1 title="My compagny">About Us</h1> -->
+
+<!-- Il y a deux types d'éléments en HTML:
+
+    Inline Elements: ne commence pas sur une nouvelle ligne et prend juste la place nécessaire
+    Exemples: les balises div, h1 à h6, p, form ...
+
+    Block Elements: commence sur une nouvelle ligne et prend toute la place disponible
+    Exemples: span, img, a ...-->
+
+<html>
+
+<head>
+    <!-- La balise title pour avoir le titre de la page web 
+    ( dans le tab du browser) -->
+    <title> Ceci est un titre de page web</title>
+</head>
+
+<body>
+
+    <!-- Les balises de titres sur la page sont de h1 à h6,
+    du plus grand au plus petit -->
+
+    <h1>Plus grand titre = h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>Plus petit titre = h6</h6>
+
+    <!-- La balise p sert à faire les paragraphes -->
+    <!-- La balise strong sert à dire que l'élément doit être mis en avant.
+    Elle met le texte en gras par défaut -->
+    <!-- La balise em sert un peu à la même chose mais plus pour souligner l'élément.
+    Elle met le texte en italique -->
+
+    <p> Ceci est un paragraphe : Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Exercitationem vero ducimus non eligendi odio architecto ipsam animi molestiae veniam.
+        Perferendis, voluptatibus doloribus repudiandae aliquid in magni optio sunt non dolor.
+        <strong>Ce texte est important et à l'intérieur du paragraphe</strong>
+        <em>Ce texte est à souligner ( pas au sens propre) et à l'intérieur du paragraphe</em>
+    </p>
+
+    <!-- La balise a permet de changer le texte en hyperlien -->
+    <!-- On rajoute href dans le tag du début pour mettre la destination du lien -->
+    <!-- On peut rajouter l'élément target au même endroit que href pour dire
+    où ouvrir le lien. 
+    Par exemple, si on veut l'ouvrir dans un nouvel onglet, on mettra _blank en valeur -->
+
+    <a href="nomdelapage.html" target="_blank">Ceci est un lien</a>
+
+    <!-- Les listes sont des éléments listés à la suite, mis en évidence
+    par des symboles au début. Il y a deux types de listes en HTMl:
+
+    Les listes ul est une liste où chaque éléments aura un symbole au début
+        de base le symbole est un point.
+
+    Les listes ol est une liste ordonnée où chaque éléments aura un chiffre au débu
+        le premier aura le 1 et ainsi de suite.
+     -->
+
+     <ul>
+         <li>Element de liste 1</li>
+         <li>Element de liste 2</li>
+         <li>Element de liste 3</li>
+         <li>Element de liste 4</li>
+     </ul>
+
+     <ol>
+        <li>Element de liste 1</li>
+        <li>Element de liste 2</li>
+        <li>Element de liste 3</li>
+        <li>Element de liste 4</li>
+     </ol>
+
+
+     <table>
+
+         <thead>
+
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+            
+         </thead>
+
+         <tbody>
+            <tr>
+                <td>Jean</td>
+                <td>jean@something.com</td>
+                <td>44</td>
+            </tr>
+
+            <tr>
+                <td>Paul</td>
+                <td>paul@something.com</td>
+                <td>37</td>
+            </tr>
+
+            <tr>
+                <td>Jacques</td>
+                <td>jacques@something.com</td>
+                <td>26</td>
+            </tr>
+        
+         </tbody>
+         
+     </table>
+
+     
+
+
+
+</body>
+
+</html>
