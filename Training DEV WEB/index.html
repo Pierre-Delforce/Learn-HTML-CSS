@@ -23,7 +23,7 @@ Exemple: <h1 title="My compagny">About Us</h1> -->
 <!-- Il y a deux types d'éléments en HTML:
 
     Inline Elements: ne commence pas sur une nouvelle ligne et prend juste la place nécessaire
-    Exemples: les balises div, h1 à h6, p, form ...
+    Exemples: les balises h1 à h6, p, form ...
 
     Block Elements: commence sur une nouvelle ligne et prend toute la place disponible
     Exemples: span, img, a ...-->
@@ -52,7 +52,9 @@ Exemple: <h1 title="My compagny">About Us</h1> -->
     <!-- La balise strong sert à dire que l'élément doit être mis en avant.
     Elle met le texte en gras par défaut -->
     <!-- La balise em sert un peu à la même chose mais plus pour souligner l'élément.
-    Elle met le texte en italique -->
+    Elle met le texte en italique par défaut-->
+    <!-- Les deux dernières balises ne sont pas à utiliser pour les effets de mise en forme,
+    on gère tout ça grâce au CSS.  -->
 
     <p> Ceci est un paragraphe : Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Exercitationem vero ducimus non eligendi odio architecto ipsam animi molestiae veniam.
@@ -61,7 +63,8 @@ Exemple: <h1 title="My compagny">About Us</h1> -->
         <em>Ce texte est à souligner ( pas au sens propre) et à l'intérieur du paragraphe</em>
     </p>
 
-    <!-- La balise a permet de changer le texte en hyperlien -->
+    <!-- La balise a permet de changer l'élément entourée par cette balise
+    en hyperlien vers une qutre pqge ou un autre élément ( image stockée ...) -->
     <!-- On rajoute href dans le tag du début pour mettre la destination du lien -->
     <!-- On peut rajouter l'élément target au même endroit que href pour dire
     où ouvrir le lien. 
@@ -79,34 +82,38 @@ Exemple: <h1 title="My compagny">About Us</h1> -->
         le premier aura le 1 et ainsi de suite.
      -->
 
-     <ul>
-         <li>Element de liste 1</li>
-         <li>Element de liste 2</li>
-         <li>Element de liste 3</li>
-         <li>Element de liste 4</li>
-     </ul>
-
-     <ol>
+    <ul>
         <li>Element de liste 1</li>
         <li>Element de liste 2</li>
         <li>Element de liste 3</li>
         <li>Element de liste 4</li>
-     </ol>
+    </ul>
 
+    <ol>
+        <li>Element de liste 1</li>
+        <li>Element de liste 2</li>
+        <li>Element de liste 3</li>
+        <li>Element de liste 4</li>
+    </ol>
 
-     <table>
+    <!-- Table permet de créer des tableaux:
+        thead est la structure des colonnes, tbody les lignes.
+        tr est ce qui englobe les colonnes et les lignes.
+        th est utilisé pour dire le nom des colonnes, td pour les lignes. -->
 
-         <thead>
+    <table>
+
+        <thead>
 
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Age</th>
             </tr>
-            
-         </thead>
 
-         <tbody>
+        </thead>
+
+        <tbody>
             <tr>
                 <td>Jean</td>
                 <td>jean@something.com</td>
@@ -124,13 +131,125 @@ Exemple: <h1 title="My compagny">About Us</h1> -->
                 <td>jacques@something.com</td>
                 <td>26</td>
             </tr>
-        
-         </tbody>
-         
-     </table>
 
-     
+        </tbody>
 
+    </table>
+
+    <!-- La balise hr permet de faire apparaître une ligne séparatrice. -->
+
+    <hr>
+
+    <!-- form est une balise qui représente une section du document qui
+    envoie des données avec les serveurs.
+    L'attribut action est utilisé pour préciser le chemin où va l'info,
+    et method la manière dont elle est envoyée. -->
+
+    <!-- Label est une balise permettant de légender un objet avec du texte.
+    Il peut être suivi de l'attribut "for", permettant de cibler quels inputs légender
+    grâce à leurs id. -->
+
+    <!-- La balise input est la balise regroupant plusieurs moyens d'envoyer des informations
+    avec l'intéraction de l'utilisateur.
+    Les différents moyens sont accesibles grâce à l'attribut type, il en existe une 
+    multitude ( email, password, checkbox, time, url...). La balise textearea est à part
+    des inputs, car le champ de saisie est plus grand et différent (sert à envoyer des
+    messages plus ou moins grand). La valeur sumbit pour l'attribut type permet de créer
+    un bouton qui envoie les données entrées dans les champs précédents quand on appuie
+    dessus.
+
+    L'atribut placeholder sert à mettre un message en arrière plan sur le champ de saisie,
+    afin de donner des indications à l'utilisateur généralement. Le texte disparaît quand
+    l'utilisateur rentre des informations dans le champ de saisie.
+
+    L'attribut name sert à localiser l'input du côté serveur, et l'attribut id du côté
+    HTML, CSS ou encore JS. -->
+
+    <!-- La balise select représente un contrôle qui fournit une liste d'options
+    parmi lesquelles l'utilisateur pourra choisir. A la suite, la balise option sert
+    à désigner quelles sont les différents choix possibles. L'attribut value sert à
+    désigner quelle réponse a été choisie une fois que l'utilisateur envoie ses
+    informations. -->
+
+
+
+    <!-- La balise div permet de séparer et organiser les différentes parties d'une page web.
+    On l'utilise ici juste pour mieux placer les éléments du form (normalement en CSS mais 
+    cette page est dédiée à l'HTML uniquement).
+
+    Cela les mets à la ligne. On utilise div car les éléments label et input sont tout les deux
+    des éléments "inlines" et div est un élément "block".
+
+    Div peut être utilisé afin de grouper d'autres éléments pour leur
+    appliquer un style grâce au CSS (en utilisant les attributs class ou id) -->
+
+
+    <form action="serveur-side.php" method="POST">
+
+        <div>
+            <label>Name</label>
+            <input type="text" name="firstName" id="1-name" placeholder="Nom Prénom">
+        </div>
+
+        <div>
+            <label>Email</label>
+            <input type="email" name="email">
+        </div>
+
+        <div>
+            <label>Message</label>
+            <textarea name="message"></textarea>
+        </div>
+
+        <div>
+            <label>Gender</label>
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="none">None</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="submit" name="submit" value="Submit">
+        </div>
+
+    </form>
+
+    <!-- Button permet de créer un bouton, mais il faut utiliser un autre langage
+    de programmation pour pouvoir lui donner une utilité. -->
+
+    <button>Un bouton différent</button>
+
+    <!-- La balise img permet d'insérer une image sur notre page.
+
+    L'attribut src permet de spécifier le chemin pour trouver l'image.
+    Pour écrire le chemin, il part toujours de l'endroit où se trouve
+    index.html, et on utilisera des / quand on veut allez dans un dossier, et ..
+    pour en sortir (voir exemple).
+
+    L'attribut alt permet de faire apparaître un texte si l'image qui doit être 
+    affichée n'est pas trouvée.-->
+
+    <img src="../img/img.jpg" alt="Image non trouvée">
+
+    <!-- blockquote permet d'indiquer que le texte contenu
+    dans l'élément est une citation longue, avec une indentation de base.
+    L'attribut cite permet de préciser la source de la citation. -->
+
+    <blockquote cite="https://www.google.com">Google</blockquote>
+
+    <!-- La balise abbr ajoute une abréviation ou un acronyme et permet,
+    de façon optionnelle, d'en fournir une description complète.
+    Il apparaît quand on passe le curseur de la souris sur l'élément
+    ciblé par abbr. -->
+
+    <!-- La balise cite, et non l'attribut vu juste avant, permet de préciser
+    au navigateur que le contenu est cité. -->
+
+    <p> L'<abbr title="HyperText Markup Language">HTML</abbr> n'est pas un langage de programmation.</p>
+
+    <p>C'est la fin <cite>de cette page.</cite></p>
 
 
 </body>
